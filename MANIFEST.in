@@ -1,0 +1,6 @@
+recursive-include cbvadmin_semantic_ui *
+global-exclude __pycache__
+global-exclude *.py[co]
+
+include README.rst
+include LICENSE
