@@ -1,0 +1,27 @@
+{% extends 'cbvadmin/semantic-ui/base.html' %}
+{% load i18n crispy_forms_tags crispy_forms_filters %}
+
+{% block extrahead %}
+{{ block.super }}
+<style type="text/css">
+body {
+  background-color: #DADADA;
+}
+body > .grid {
+  height: 100%;
+}
+.column {
+  max-width: 450px;
+}
+</style>
+{% endblock %}
+
+{% block outer_content %}
+<div class="ui middle aligned centered grid">
+  <div class="row">
+    <div class="sixteen wide tablet six wide computer column">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}
