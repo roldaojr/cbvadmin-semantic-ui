@@ -4,6 +4,7 @@
 {% block title %}{{ view.admin.model_opts.verbose_name_plural|capfirst }}{% endblock %}
 
 {% block content %}
+
 {% block actions %}
   <div class="ui mobile only fluid buttons">
   {% if view.has_filters and filter.form %}
@@ -42,12 +43,17 @@
   </div>
 {% endblock %}
 
+{% block filter %}
 {% if view.has_filters and filter.form %}
 {% include 'cbvadmin/semantic-ui/filter.html' %}
 {% endif %}
+{% endblock %}
 
+{% block list %}
 {% load render_table from django_tables2 %}
 {% render_table table 'cbvadmin/semantic-ui/table.html' %}
+{% endblock %}
+
 {% endblock %}
 
 {% block extrascript %}
