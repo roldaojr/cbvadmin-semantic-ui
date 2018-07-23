@@ -17,11 +17,11 @@
 <script src="{% static 'vendor/semantic-ui/semantic.min.js' %}"></script>
 <script src="{% static 'vendor/semantic-ui-calendar/calendar.min.js' %}"></script>
 <script src="{% static 'vendor/moment/moment-with-locales.min.js' %}"></script>
-<script src="{% static 'cbvadmin/semantic-ui/cbvadmin.js' %}"></script>
 <script type="text/javascript">
 {% get_current_language as LANGUAGE_CODE %}
 moment.locale('{{ LANGUAGE_CODE }}');
 </script>
+<script src="{% static 'cbvadmin/semantic-ui/cbvadmin.js' %}"></script>
 {% block extrascript %}{% endblock %}
 </body>
 </html>
