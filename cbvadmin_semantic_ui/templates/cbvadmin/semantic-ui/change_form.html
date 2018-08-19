@@ -8,14 +8,13 @@
 {% block extrascript %}
 {{ block.super }}
 {{ form.media.js }}
+{% if object and admin.urls.delete %}
 <script type="text/javascript">
 $('.delete.button').click(function() {
   $('#confirm-delete-modal').modal('show')
 })
-$('.save.button').click(function(e){
-  $('#change-form').submit()
-})
 </script>
+{% endif %}
 {% endblock %}
 
 {% block title %}
