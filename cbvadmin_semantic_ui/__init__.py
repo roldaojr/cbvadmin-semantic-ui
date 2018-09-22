@@ -1,4 +1,6 @@
-__version__ = '0.4.0'
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
 
 REQUIRED_APPS = [
     'semantic_ui'

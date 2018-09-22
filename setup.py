@@ -1,9 +1,10 @@
 from setuptools import setup
-from cbvadmin_semantic_ui import __version__
+import versioneer
 
 setup(
     name='cbvadmin-semantic-ui',
-    version=__version__,
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Semantic UI template for CBVadmin',
     long_description=open('README.rst').read(),
     classifiers=[
