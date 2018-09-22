@@ -4,7 +4,7 @@
 
 {% block menu %}
 {% generate_menu %}
-<div class="ui sidebar vertical inverted menu">
+<div class="ui main sidebar vertical inverted menu">
   <div class="item">
     {{ view.admin.site.title }}
   </div>
@@ -40,4 +40,7 @@
     {% block content %}{% endblock %}
   </div>
 </div>
+
+{% block right_content %}{% endblock %}
+
 {% endblock %}

@@ -22,4 +22,4 @@ $('.field > .timeinput').parent().addClass('ui calendar').calendar({
     type: 'time', formatter: calendarFormatter
 })
 
-$('#sidebar-toggle').click(function(){$('.ui.sidebar').sidebar('toggle')})
+$('#sidebar-toggle').click(function(){$('.ui.main.sidebar').sidebar('toggle')})

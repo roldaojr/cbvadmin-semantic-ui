@@ -6,61 +6,45 @@
 {% block content %}
 
 {% block actions %}
-  <div class="ui mobile only fluid buttons">
-  {% if view.has_filters and filter.form %}
-    <div class="ui secondary basic filter button">
-      <i class="filter icon"></i>
-      {% trans 'Filter' %}
-    </div>
-  {% endif %}
-  {% if view.has_filters and filter.form and admin.urls.add %}
-    <div class="or" data-text="{% trans 'or' %}"></div>
-  {% endif %}
-  {% if admin.urls.add %}
-    <a href="{% url admin.urls.add %}" class="ui primary button">
-      <i class="plus icon"></i>
-      {% trans 'Add' %}
-    </a>
-  {% endif %}
+  {% block mobile_menu %}
+  <div class="ui mobile only two item menu">
+    {% if admin.urls.add %}
+    <a class="item" href="{% url admin.urls.add %}"><i class="plus icon"></i> {% trans 'Add' %}</a>
+    {% endif %}
+    {% if view.has_filters and filter.form %}
+    <a class="filter item"><i class="filter icon"></i> {% trans 'Filter' %}</a>
+    {% endif %}
   </div>
-  <div class="ui secondary mobile hidden menu">
-  {% if view.has_filters and filter.form %}
-    <div class="item">    
-      <div class="ui secondary basic filter button">
-        <i class="filter icon"></i>
-        {% trans 'Filter' %}
-      </div>
+  {% endblock %}
+  {% block desktop_menu %}
+  <div class="ui mobile hidden attached menu">
+    {% if admin.urls.add %}
+    <a class="item" href="{% url admin.urls.add %}"><i class="plus icon"></i> {% trans 'Add' %} {{ admin.model_opts.verbose_name }}</a>
+    {% endif %}
+    {% if view.has_filters and filter.form %}
+    <div class="right menu">
+      <a class="filter item"><i class="filter icon"></i> {% trans 'Filter' %}</a>
     </div>
-  {% endif %}
-  {% if admin.urls.add %}
-    <div class="right item">
-      <a href="{% url admin.urls.add %}" class="ui primary button">
-        <i class="plus icon"></i>
-        {% trans 'Add' %} {{ admin.model_opts.verbose_name }}
-      </a>
-    </div>
-  {% endif %}
+    {% endif %}
   </div>
-{% endblock %}
-
-{% block filter %}
-{% if view.has_filters and filter.form %}
-{% include 'cbvadmin/semantic-ui/filter.html' %}
-{% endif %}
+  {% endblock %}
 {% endblock %}
 
 {% block list %}
 {% load render_table from django_tables2 %}
 {% render_table table 'cbvadmin/semantic-ui/table.html' %}
 {% endblock %}
+{% endblock %}
 
+{% block right_content %}
+{% include 'cbvadmin/semantic-ui/filter.html' %}
 {% endblock %}
 
 {% block extrascript %}
 {{ block.super }}
 <script type="text/javascript">
-  $('.filter.button').click(function() {
-    $('#filter-box').transition('slide down')
+  $('.filter.item').click(function() {
+    $('.filter.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('show')
   })
 </script>
 {% endblock %}
