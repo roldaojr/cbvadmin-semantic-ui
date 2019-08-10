@@ -12,10 +12,10 @@ setup(
         "Framework :: Django",
         "Operating System :: OS Independent",
         "Programming Language :: JavaScript",
-        "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -30,7 +30,7 @@ setup(
     zip_safe=False,
     python_requires='>=3',
     install_requires=[
-        'cbvadmin>=0.4.0',
-        'crispy-semantic-ui>=1.0',
+        'cbvadmin>=0.5.0',
+        'crispy-forms-semantic-ui>=1.0',
     ]
 )

@@ -11,8 +11,8 @@
   <div class="item">
     {{ request.user }}
     <div class="menu">
-      <a class="item" href="{% url 'cbvadmin:password_change' %}">{% trans 'Change password' %}</a>
-      <a class="item" href="{% url 'cbvadmin:logout' %}">{% trans 'Logout' %}</a>
+      <a class="item" href="{% url 'cbvadmin:accounts:password_change' %}">{% trans 'Change password' %}</a>
+      <a class="item" href="{% url 'cbvadmin:accounts:logout' %}">{% trans 'Logout' %}</a>
     </div>
   </div>
 {% with menu=menus.cbvadmin %}
