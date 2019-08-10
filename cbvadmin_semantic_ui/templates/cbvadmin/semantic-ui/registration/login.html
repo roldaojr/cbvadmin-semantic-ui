@@ -4,14 +4,8 @@
 {% block extrahead %}
 {{ block.super }}
 <style type="text/css">
-body {
-  background-color: #DADADA;
-}
 body > .grid {
   height: 100%;
-}
-.column {
-  max-width: 450px;
 }
 </style>
 {% endblock %}
@@ -22,35 +16,14 @@ body > .grid {
 <div class="ui middle aligned centered grid">
   <div class="row">
     <div class="sixteen wide tablet six wide computer column">
-      <div class="ui inverted segment">
-        <h2 class="ui center aligned header">
-          {{ view.admin.site.title }}
-        </h2>
-      </div>
-      <div class="ui secondary segment">
-        <form novalidate class="ui large form" method="post">
-          {% csrf_token %}
-          <input type="hidden" name="next" value="{{ next }}" />
-            {{ form|crispy }}
-            <button type="submit" class="ui fluid large primary button">{% trans 'Login' %}</button>
-        </form>
-      </div>
-      {% if form.errors or form.non_field_errors %}
-      <div class="ui error message">
-        <ul class="list">
-        {% for field, errors in form.errors.items %}
-        <li>
-          <b>{{ field|capfirst }}</b>:
-          {% for error in errors %}
-          {{ error }},
-          {% endfor %}
-        </li>
-        {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-      <div class="ui message">
-        <a href="{% url view.admin.urls.password_reset %}">{% trans 'Password Reset' %}</a>
+      <form class="ui form attached fluid primary segment" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {{ form|crispy }}
+        <button type="submit" class="ui primary button">Fazer login</button>
+      </form>
+      <div class="ui bottom attached segment">
+        <a href="{% url view.admin.urls.password_reset %}">Esqueceu sua senha?</a>
       </div>
     </div>
   </div>
