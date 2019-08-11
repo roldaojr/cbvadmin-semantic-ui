@@ -31,6 +31,6 @@ setup(
     python_requires='>=3',
     install_requires=[
         'cbvadmin>=0.5.0',
-        'crispy-forms-semantic-ui>=1.0',
+        'crispy-forms-semantic-ui>=0.2.0',
     ]
 )
