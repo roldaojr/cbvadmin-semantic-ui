@@ -2,7 +2,7 @@
 {% if item.visible %}
 {% if item.children %}
   <div class="item">
-    {% if item.icon %}<i class="{{ item.icon }} icon"></i>{% endif %}
+    {% if item.icon %}<i class="{{ item.icon }}" style="float: right"></i>{% endif %}
     {{ item.title }}
     <div class="menu">
 {% for subitem in item.children %}
@@ -14,7 +14,7 @@
   </div>
 {% elif item.url %}
   <a class="item" {% if item.url %}href="{{ item.url }}"{% endif %}>
-    {% if item.icon %}<i class="{{ item.icon }} icon"></i>{% endif %}
+    {% if item.icon %}<i class="{{ item.icon }}" style="float: right"></i>{% endif %}
     {{ item.title }}
   </a>
 {% endif %}
