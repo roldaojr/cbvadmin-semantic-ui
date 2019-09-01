@@ -1,7 +1,1 @@
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
-
-REQUIRED_APPS = [
-    'semantic_ui'
-]
+default_app_config = 'cbvadmin_semantic_ui.apps.CBVAdminConfig'
